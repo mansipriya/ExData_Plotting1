@@ -10,6 +10,7 @@ ta$Time <- strptime(ta$Time, format="%H:%M:%S")
 ta[1:1440,"Time"] <- format(ta[1:1440,"Time"],"2007-02-01 %H:%M:%S")
 ta[1441:2880,"Time"] <- format(ta[1441:2880,"Time"],"2007-02-02 %H:%M:%S")
 
+png(filename = "plot4.png", width = 480, height = 480)
 #plotting
 par(mfrow= c(2,2))
 #graph 1
@@ -22,4 +23,4 @@ lines(ta$Time,as.numeric(as.character(ta$Sub_metering_2)),col="red")
 lines(ta$Time,as.numeric(as.character(ta$Sub_metering_3)),col="blue")
 #graph 4
 plot(ta$Time,as.numeric(as.character(ta$Global_reactive_power)),type="l",xlab="datetime",ylab="Global Reactive Power") 
-
+dev.off()
