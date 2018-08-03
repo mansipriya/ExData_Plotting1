@@ -11,5 +11,8 @@ ta[1:1440,"Time"] <- format(ta[1:1440,"Time"],"2007-02-01 %H:%M:%S")
 ta[1441:2880,"Time"] <- format(ta[1441:2880,"Time"],"2007-02-02 %H:%M:%S")
 
 
+png(filename = "plot2.png", width = 480, height = 480)
+
 # calling the basic plot function
 plot(ta$Time,as.numeric(as.character(ta$Global_active_power)),type="l",xlab="",ylab="Global Active Power (kilowatts)") 
+dev.off()
